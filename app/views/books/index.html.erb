@@ -1,1 +1,16 @@
-<h3>Bookers</h3>
+<div class="main">
+	<!-- 本一覧 -->
+	<h1>Bookers</h1>
+
+
+	<!-- 投稿フォーム -->
+	<h2>New book</h2>
+	<%= form_with(model: Book.new, url: books_path, method: :post, local: true) do |f| %>
+		<p>Title</p>
+		<%= f.text_field :title %>
+		<p>Body</p>
+		<%= f.text_area :body %></br>
+
+		<%= f.submit 'Create Book' %>
+	<% end %>
+</div>
