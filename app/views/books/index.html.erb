@@ -1,4 +1,9 @@
 <div class="main">
+
+	<div class="success-message">
+		<%= notice %>
+	</div>
+
 	<!-- 本一覧 -->
 	<div>
 		<h1>Bookers</h1>
@@ -20,15 +25,18 @@
 		</table>
 	</div>
 
+	<div>
+		<h2>New book</h2>
+		<%= form_with(model: Book.new, url: books_path, method: :post, local: true) do |f| %>
+			<!-- エラーメッセージ -->
 
-	<!-- 投稿フォーム -->
-	<h2>New book</h2>
-	<%= form_with(model: Book.new, url: books_path, method: :post, local: true) do |f| %>
-		<p>Title</p>
-		<%= f.text_field :title %>
-		<p>Body</p>
-		<%= f.text_area :body %></br>
+			<!-- 投稿フォーム -->
+				<p>Title</p>
+				<%= f.text_field :title %>
+				<p>Body</p>
+				<%= f.text_area :body %></br>
+				<%= f.submit 'Create Book' %>
+		<% end %>
+	</div>
 
-		<%= f.submit 'Create Book' %>
-	<% end %>
 </div>
