@@ -28,7 +28,6 @@
 	<div>
 		<h2>New book</h2>
 		<%= form_with(model: Book.new, url: books_path, method: :post, local: true) do |f| %>
-			<!-- エラーメッセージ -->
 
 			<!-- 投稿フォーム -->
 				<p>Title</p>
@@ -37,6 +36,10 @@
 				<%= f.text_area :body %></br>
 				<%= f.submit 'Create Book' %>
 		<% end %>
+	</div>
+
+	<div class="">
+		<%= link_to "Top", root_path %>
 	</div>
 
 </div>
